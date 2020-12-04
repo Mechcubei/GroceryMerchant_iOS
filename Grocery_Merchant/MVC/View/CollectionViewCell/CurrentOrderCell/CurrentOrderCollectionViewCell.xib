@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CurrentOrderCollectionViewCell" id="gTV-IL-0wX" customClass="CurrentOrderCollectionViewCell" customModule="Grocery_Merchant" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="227" height="71"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="227" height="71"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m24-Gg-TnB">
+                        <rect key="frame" x="8" y="8" width="211" height="55"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiY-56-Iye">
+                                <rect key="frame" x="84.5" y="17" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESK-ZA-eXr">
+                                <rect key="frame" x="0.0" y="53" width="211" height="2"/>
+                                <color key="backgroundColor" name="CommonColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Ljv-Mu-SiF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qiY-56-Iye" firstAttribute="centerX" secondItem="m24-Gg-TnB" secondAttribute="centerX" id="1F5-R3-nJN"/>
+                            <constraint firstItem="ESK-ZA-eXr" firstAttribute="leading" secondItem="m24-Gg-TnB" secondAttribute="leading" constant="0.10000000000000001" id="Gwq-HT-PjF"/>
+                            <constraint firstAttribute="bottom" secondItem="ESK-ZA-eXr" secondAttribute="bottom" constant="0.10000000000000001" id="RbW-Uj-mSC"/>
+                            <constraint firstItem="qiY-56-Iye" firstAttribute="centerY" secondItem="m24-Gg-TnB" secondAttribute="centerY" id="Zml-4J-3Zi"/>
+                            <constraint firstAttribute="trailing" secondItem="ESK-ZA-eXr" secondAttribute="trailing" constant="0.10000000000000001" id="ylI-i2-bWD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="m24-Gg-TnB" secondAttribute="trailing" constant="8" id="EOn-H1-giP"/>
+                <constraint firstItem="m24-Gg-TnB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="c5x-zu-ReC"/>
+                <constraint firstAttribute="bottom" secondItem="m24-Gg-TnB" secondAttribute="bottom" constant="8" id="fgd-oE-XWI"/>
+                <constraint firstItem="m24-Gg-TnB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="mGx-Sf-A2m"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="227" height="71"/>
+            <connections>
+                <outlet property="lblName" destination="qiY-56-Iye" id="p62-s6-iIe"/>
+                <outlet property="viewGreenLine" destination="ESK-ZA-eXr" id="Daa-m4-7ta"/>
+            </connections>
+            <point key="canvasLocation" x="260.14492753623188" y="118.86160714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="CommonColor">
+            <color red="0.37999999523162842" green="0.63099998235702515" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
