@@ -16,7 +16,7 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -24,7 +24,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Thread.sleep(forTimeInterval: 3)
         UINavigationBar.appearance().isHidden = true
         GMSPlacesClient.provideAPIKey("AIzaSyCHLhPXla2B8BZESBtz3cgmbgwkijKIWVc")
+        
+        if #available(iOS 13.0, *){
+        }else{
+            self.setScreen()
+        }
         return true
+        
+    }
+    
+    func setScreen() {
+        
+        let status =  UserDefaults.standard.string(forKey:"token")
+        let login = UIStoryboard.init(name: "Login", bundle: nil)
+        let tabbar = UIStoryboard.init(name: "Tabbar", bundle: nil)
+        
+        let loginVC = login.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+        let mainVC = tabbar.instantiateViewController(withIdentifier: "MainVC") as? MainVC
+        
+        if status != nil {
+            let rootNC = UINavigationController(rootViewController: mainVC!)
+            rootNC.isNavigationBarHidden = true
+            self.window!.rootViewController = rootNC
+            self.window!.makeKeyAndVisible()
+        } else {
+            let rootNC = UINavigationController(rootViewController: loginVC!)
+            rootNC.isNavigationBarHidden = true
+            self.window!.rootViewController = rootNC
+            self.window!.makeKeyAndVisible()
+        }
     }
 
     // MARK: UISceneSession Lifecycle

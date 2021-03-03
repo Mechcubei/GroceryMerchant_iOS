@@ -27,6 +27,7 @@ class SignUpVC: UIViewController,CLLocationManagerDelegate,GMSAutocompleteViewCo
     var lat:Double?
     var long:Double?
     var imagePicker: ImagePicker!
+    var selectedImage:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +114,7 @@ class SignUpVC: UIViewController,CLLocationManagerDelegate,GMSAutocompleteViewCo
     //MARK:- VALIDATIONS
     func valid() -> Bool{
         
-        let valid = Validations.shareInstance.validateSignUp(groceryName: txtGroceryName.text ?? "", firstName: txtFirstName.text ?? "", lastName: txtLastName.text ?? "", gstNumber: txtGstinNumber.text ?? "", address: txtAddLocation.text ?? "")
+        let valid = Validations.shareInstance.validateSignUp(groceryName: txtGroceryName.text ?? "", firstName: txtFirstName.text ?? "", lastName: txtLastName.text ?? "", gstNumber: txtGstinNumber.text ?? "", address: txtAddLocation.text ?? "", image: true)
         
         switch valid {
             
@@ -130,6 +131,9 @@ class SignUpVC: UIViewController,CLLocationManagerDelegate,GMSAutocompleteViewCo
     }
     // imagePi8cker  delegate  methods
        func didSelect(image: UIImage?) {
+        
+        self.selectedImage = true
+        
            self.imgUpload.image = image
           // self.arrImg.append(image!)
            

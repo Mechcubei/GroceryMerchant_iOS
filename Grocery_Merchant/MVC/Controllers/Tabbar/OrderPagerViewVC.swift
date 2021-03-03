@@ -51,7 +51,6 @@ class OrderPagerViewVC: UIViewController {
         self.registerNibFileName()
         self.selectOrderType(index: 0)
         
-    
     }
         
     private func add(asChildViewController viewController: UIViewController) {
@@ -87,12 +86,13 @@ class OrderPagerViewVC: UIViewController {
     func scrollToIndex(index:Int) {
         self.collectnView?.scrollToItem(at: IndexPath(item: index, section: 0), at: [.centeredHorizontally, .centeredVertically], animated: true)
     }
+    
     //MARK:- ACTION BUTTONS
     @IBAction func btnback(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
+
 //MARK:- PAGEVIEW CONTROLLER
 extension OrderPagerViewVC: PageViewControllerDelegate {
     func scroll(index: Int) {

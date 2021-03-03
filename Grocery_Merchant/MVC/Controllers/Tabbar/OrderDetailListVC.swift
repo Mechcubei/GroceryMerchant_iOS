@@ -114,6 +114,7 @@ class OrderDetailListVC: UIViewController {
         }
         
     }
+    
     //MARK:- ORDER STATUS API
     func orderStatus(Status:String) {
         Loader.shared.showLoader()
@@ -126,6 +127,7 @@ class OrderDetailListVC: UIViewController {
             Utilities.shared.showAlert(title: "", msg: data.message!)
         }
     }
+    
     //MARK:- ORDER CANCELATION API
     func orderCancelation() {
         Loader.shared.showLoader()

@@ -86,7 +86,6 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource,UICo
        let vc = ENUM_STORYBOARD<UpdateInventoryVC>.tabbar.instantiativeVC()
        vc.categoryID = "\(String(describing: arrGetMerchantCategory[indexPath.row].id!))"
        self.navigationController?.pushViewController(vc, animated: true)
-
     }
     
 }

@@ -16,7 +16,6 @@ class CurrentOrdersVC: UIViewController {
     @IBOutlet var lblNoDataFound: UILabel!
     
     //MARK:- LOCAL VARIABLES
-    var arrNameCategories = ["ALL","PENDING","ACCEPTED","IN PROCESS","ON GOING"]
     var arrCurrentOrder = [CurrentOrderStruct2]()
     var selectedIndex = 0
     var refreshControl: UIRefreshControl?
@@ -32,10 +31,11 @@ class CurrentOrdersVC: UIViewController {
      
         NotificationCenter.default.addObserver(self, selector: #selector(callApi(notification:)), name: NSNotification.Name(rawValue: "orderType"), object:nil)
     }
-        
+         
     //MARK:- REGISTER NIB FILE NAME
     func registerNibFileName() {
         tblView.register(UINib(nibName: "CurrentOrderTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentOrderTableViewCell")
+        
     }
     //MARK:- REFRESH TABLEVIEW
     func pullToRefresh() {

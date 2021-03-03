@@ -14,6 +14,6 @@ struct LoginStruct:Decodable {
 }
 
 struct LoginStruct2:Decodable {
-    let first_name,token,last_name: String?
-//    let id:Int?
+    let first_name,token,last_name: String?,userName:String?
+    //let id:Int?
 }

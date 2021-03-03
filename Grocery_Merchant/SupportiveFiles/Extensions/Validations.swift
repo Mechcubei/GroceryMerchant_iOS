@@ -5,6 +5,7 @@
 //  Copyright © 2020 Amandeep tirhima. All rights reserved.
 
 import Foundation
+import UIKit
 
 enum Valid {
     case success
@@ -34,7 +35,7 @@ class Validations{
        }
         
     // SignUp valiation
-    func validateSignUp(groceryName:String,firstName:String,lastName:String,gstNumber:String,address:String) -> Valid{
+    func validateSignUp(groceryName:String,firstName:String,lastName:String,gstNumber:String,address:String,image:Bool) -> Valid{
         
         if groceryName.isEmpty {
             
@@ -56,7 +57,11 @@ class Validations{
             
             return Valid.failure( AlertMessages.emptyAddress.rawValue)
             
+        } else if image == false {
+            
+            return Valid.failure(AlertMessages.emptyImage.rawValue)
         }
+        
 
         return Valid.success
     }

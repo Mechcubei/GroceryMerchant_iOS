@@ -51,7 +51,6 @@ class MainVC: UIViewController {
             print(data)
             self.arrBannerList = data.data
             self.bannerCollectionView.reloadData()
-            
         }
     }
     
@@ -79,13 +78,9 @@ class MainVC: UIViewController {
         self.bannerCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
         counter += 1
     }
-    
-    
-    
 }
+
 //MARK:- EXTENTION COLLECTION VIEW
-@available(iOS 13.0, *)
-@available(iOS 13.0, *)
 @available(iOS 13.0, *)
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

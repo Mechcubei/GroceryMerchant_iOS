@@ -71,15 +71,19 @@ class LoginVC: UIViewController,UIGestureRecognizerDelegate,CountryPickerViewDel
                 return
             }
             if number.count == 10 {
+                
                 let newString = countryCode.replacingOccurrences(of: "+", with: "", options: .literal, range: nil)
                 let params:[String:Any] = ["phone_number":  txtPhoneNumber.text!,"user_role":"Merchant","country_code":newString]
+                
                 GetApiResponse.shared.sendOtp(params: params) { (data: LoginStruct) in
                     print(data)
-                    if data.statusCode == 200 {
-                        self.setUpOtpView()
-                    } else {
-                        print(data.message!)
+                                        
+                    guard  data.statusCode == 200 else {
+                        Utilities.shared.showAlert(title: "", msg:  data.message!)
+                        return
                     }
+                    
+                    self.setUpOtpView()
                 }
             } else {
                 Utilities.shared.showAlert(title: "", msg: "Please enter correct phone number")
@@ -100,25 +104,50 @@ class LoginVC: UIViewController,UIGestureRecognizerDelegate,CountryPickerViewDel
         GetApiResponse.shared.verifyOtp(params: params) { (data: LoginStruct) in
             print(data)
             
+            guard data.statusCode == 200 else {  return  }
+        
+            UserDefaults.standard.set(data.data?.token, forKey: "token")
+            self.getProfile()
+            self.setOtpView.isHidden = true
+        }
+    }
+    
+    func getProfile(){
+        let params:[String:Any] = ["role":"Merchant"]
+        GetApiResponse.shared.getProfile(params: params) { (data: ProfileModel) in
+            print(data)
             if data.statusCode == 200 {
-                UserDefaults.standard.set(data.data?.token, forKey: "token")
                 if data.data?.first_name != "" && data.data?.last_name != "" {
                     
-                    let vc = ENUM_STORYBOARD<MainVC>.tabbar.instantiativeVC()
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    
-                } else {
-                    
-                    let vc = ENUM_STORYBOARD<SignUpVC>.login.instantiativeVC()
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    
+                    guard data.data?.category_list == 0 else {
+                        self.moveToScreens(status:"2" )
+                        return
+                    }
+                    self.moveToScreens(status:"3" )
+                }else {
+                    self.moveToScreens(status:"1" )
                 }
-            } else {
-                self.setOtpView.isHidden = true
             }
         }
     }
     
+    func moveToScreens(status:String){
+        var vc:UIViewController!
+        switch status {
+        case "1" : vc = ENUM_STORYBOARD<SignUpVC>.login.instantiativeVC()
+        case "2" : vc = ENUM_STORYBOARD<MainVC>.tabbar.instantiativeVC()
+        case "3" : vc = ENUM_STORYBOARD<CategoriesVC>.tabbar.instantiativeVC()
+        default: break
+        }
+      self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func setUserData(userName:String,phoneNumber:String,imageUrl:String){
+        UserDefaults.standard.setValue(userName, forKey:"username")
+        UserDefaults.standard.setValue(phoneNumber, forKey:"phonenumber")
+        UserDefaults.standard.setValue(imageUrl, forKey:"imageUrl")
+    }
+        
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
         print(country.phoneCode)
         countryCode = country.phoneCode

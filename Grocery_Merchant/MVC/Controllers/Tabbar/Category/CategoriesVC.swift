@@ -86,8 +86,6 @@ class CategoriesVC: UIViewController {
             if arrListCategories[i].isSelected == true  {
                 arrSelectedData.append("\(arrListCategories[i].categoryID!)")
                 arrProductname.append("\(arrListCategories[i].categoryName!)")
-                print("\(arrSelectedData)")
-                print("\(arrProductname)")
             }
         }
         
@@ -119,8 +117,6 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource,UIC
         let url = URL(string: arrListCategories[indexPath.item].categoryImage!)
         cell.imgProduct.kf.setImage(with: url)
         cell.lblProduct.text = arrListCategories[indexPath.item].categoryName
-        
-        
         cell.backgroundColor = arrListCategories[indexPath.item].isSelected == true ?  UIColor.green  : UIColor.white
         return cell
     }

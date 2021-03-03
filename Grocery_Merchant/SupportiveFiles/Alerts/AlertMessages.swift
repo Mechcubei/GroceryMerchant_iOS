@@ -21,9 +21,10 @@ enum  AlertMessages: String {
     case mismatchPassword = "Password does not match"
     case emptyPhoneNumber = "Please enter your phone number."
     case notValidPhonenumber = "Please enter valid phone number"
-    case emptyAddress = "Please enter your address"
+    case emptyAddress = "Please enter your Location"
     case emptyGender = "Please select Gender"
     case emptyGSTINNumber = "Please enter your GSTIN Number"
+    case emptyImage = "Please select Image"
     
     
 }

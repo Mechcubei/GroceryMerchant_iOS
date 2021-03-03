@@ -72,6 +72,12 @@ class GetApiResponse: UIViewController {
         }
     }
     
+    func getProfile<T: Decodable>(params:[String:Any],completion: @escaping(T)->()) {
+        GetApiResponse.shared.getDataAllSilent(api: "get_profile",parameters: params, method: .get) { (data: T) in
+            completion(data)
+        }
+    }
+    
     func getCategory<T: Decodable>(params:[String:Any],completion: @escaping(T)->()) {
         GetApiResponse.shared.getDataAllSilent(api: "get_category", parameters: params, method: .get) { (data: T) in
             completion(data)

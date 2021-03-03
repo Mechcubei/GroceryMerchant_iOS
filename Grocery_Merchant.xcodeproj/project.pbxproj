@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB02F5D25BC42F00095B117 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB02F5C25BC42F00095B117 /* ProfileViewController.swift */; };
+		0BE3B35625C1857500F66F9B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3B35525C1857500F66F9B /* ProfileModel.swift */; };
 		1000ABEA24EE73E90016D3B8 /* SubCategoryComponentValueStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000ABE924EE73E90016D3B8 /* SubCategoryComponentValueStruct.swift */; };
 		1001961124F8E44900218BC6 /* MerchantInventoryListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1001961024F8E44900218BC6 /* MerchantInventoryListStruct.swift */; };
 		10055A85253FFE4D006265E8 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10055A84253FFE4D006265E8 /* MainVC.swift */; };
@@ -129,6 +131,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BB02F5C25BC42F00095B117 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0BE3B35525C1857500F66F9B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		1000ABE924EE73E90016D3B8 /* SubCategoryComponentValueStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryComponentValueStruct.swift; sourceTree = "<group>"; };
 		1001961024F8E44900218BC6 /* MerchantInventoryListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantInventoryListStruct.swift; sourceTree = "<group>"; };
 		10055A84253FFE4D006265E8 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				103EB18D24E10E4500FC0A52 /* SettingVC.swift */,
+				0BB02F5C25BC42F00095B117 /* ProfileViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				1079654F2541902000B9532F /* CurrentOrderStruct.swift */,
 				10FF6BE7254A96B0003BCD62 /* MerchantOrderViewStruct.swift */,
 				101F69F2254FDF3B00108C90 /* CancelationStruct.swift */,
+				0BE3B35525C1857500F66F9B /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1043,6 +1049,7 @@
 				103EB11A24E106E700FC0A52 /* AppDelegate.swift in Sources */,
 				100C047724E2946600082961 /* OrderDetailVC.swift in Sources */,
 				103EB17624E109EB00FC0A52 /* File.swift in Sources */,
+				0BE3B35625C1857500F66F9B /* ProfileModel.swift in Sources */,
 				103EB16224E109D900FC0A52 /* String.swift in Sources */,
 				100C047024E26E0200082961 /* OrderListVC.swift in Sources */,
 				103EB18A24E10E1C00FC0A52 /* CategoriesVC.swift in Sources */,
@@ -1083,6 +1090,7 @@
 				103EB18424E10BEB00FC0A52 /* OtpVC.swift in Sources */,
 				105322F224E4F76C007BDC6E /* LoginStruct.swift in Sources */,
 				1070BA402524A75800E31C8D /* AlertTableViewCell.swift in Sources */,
+				0BB02F5D25BC42F00095B117 /* ProfileViewController.swift in Sources */,
 				103EB18C24E10E3300FC0A52 /* RequestVC.swift in Sources */,
 				103EB19224E122A600FC0A52 /* BaseClass.swift in Sources */,
 				1070BA362524A2BF00E31C8D /* AlertVC.swift in Sources */,

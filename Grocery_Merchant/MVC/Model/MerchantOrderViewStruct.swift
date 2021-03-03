@@ -17,7 +17,7 @@ struct MerchantOrderViewStruct: Codable {
 
 }
 
-// MARK: - Datum
+// MARK: - MerchantOrderViewStruct2
 struct MerchantOrderViewStruct2: Codable {
     let id, user_id, driver_id, coupon_id: Int?
     let order_number: String?
